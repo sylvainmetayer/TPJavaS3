@@ -6,21 +6,25 @@ package alimentation.composant;
 import alimentation.util.Masse;
 
 /**
- * @author Sylvain
- *
+ * Interface représentant un ComposantAlimentaire.
+ * 
+ * @author METAYER-VAREILLE
+ * @see Masse
  */
 public interface ComposantAlimentaire extends Masse {
 
 	/**
+	 * Méthode qui calcule le nombre de Kcal d'un produit.
 	 * 
-	 * @return
+	 * @return {@link Float}
 	 */
 	float calculerKcal();
-	
+
 	/**
+	 * Retourne le nombre de Kcal par gramme d'un ComposantAlimentaire
 	 * 
-	 * @return
+	 * @return {@link Float}
 	 */
 	float getNbKcalParG();
-	
+
 }

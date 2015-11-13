@@ -11,22 +11,25 @@ import alimentation.produit.Repas;
 import alimentation.util.Origine;
 
 /**
- * @author Sylvain
+ * Classe permettant de simuler le comportement d'un repas.
+ * 
+ * @author METAYER-VAREILLE
+ * @see Repas pour les opérations correspondant au repas
  *
  */
 public class TestRepas {
 
-	private ProduitAlimentaire steackHache150Grammes;
-	private ProduitAlimentaire oeuf;
-	private ProduitAlimentaire carrottesRapees100Grammes;
-	private ProduitAlimentaire tomates400Grammes;
-	private ProduitAlimentaire laitEcreme200Grammes;
-	private ProduitAlimentaire rizComplet200Grammes;
+	private final ProduitAlimentaire steackHache150Grammes;
+	private final ProduitAlimentaire oeuf;
+	private final ProduitAlimentaire carrottesRapees100Grammes;
+	private final ProduitAlimentaire tomates400Grammes;
+	private final ProduitAlimentaire laitEcreme200Grammes;
+	private final ProduitAlimentaire rizComplet200Grammes;
 
 	private Repas repas;
 
 	/**
-	 * 
+	 * Constructeur qui instancie tout les composants d'un repas de test
 	 */
 	public TestRepas() {
 		this.steackHache150Grammes = new ProduitAlimentaire(new Glucide(0.0F), new Lipide(8.0F), new Proteine(27.0F),
@@ -53,7 +56,10 @@ public class TestRepas {
 	}
 
 	/**
+	 * Point d'entrée de l'application
+	 * 
 	 * @param args
+	 *            {@link String}
 	 */
 	public static void main(String[] args) {
 		TestRepas test = new TestRepas();
