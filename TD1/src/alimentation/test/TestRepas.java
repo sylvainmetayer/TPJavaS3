@@ -14,6 +14,8 @@ import alimentation.util.Origine;
  * Classe permettant de simuler le comportement d'un repas.
  * 
  * @author METAYER-VAREILLE
+ * @version 1.0
+ * @since 11/11/2015
  * @see Repas pour les opérations correspondant au repas
  *
  */

@@ -10,6 +10,8 @@ import alimentation.util.Masse;
  * 
  * @author METAYER-VAREILLE
  * @see Masse
+ * @version 1.0
+ * @since 11/11/2015
  */
 public interface ComposantAlimentaire extends Masse {
 

@@ -14,7 +14,8 @@ import alimentation.util.Origine;
  * Kcal total du repas.
  * 
  * @author METAYER-VAREILLE
- *
+ * @version 1.0
+ * @since 11/11/2015
  */
 public class Repas {
 

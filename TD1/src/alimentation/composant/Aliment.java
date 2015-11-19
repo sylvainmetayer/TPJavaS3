@@ -11,7 +11,8 @@ import alimentation.util.MasseImpl;
  * 
  * @author METAYER-VAREILLE
  * @see ComposantAlimentaire
- * 
+ * @version 1.0
+ * @since 11/11/2015
  */
 public abstract class Aliment extends MasseImpl implements ComposantAlimentaire {
 

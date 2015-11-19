@@ -20,7 +20,8 @@ import alimentation.util.Origine;
  * ce dernier
  * 
  * @author METAYER-VAREILLE
- * 
+ * @version 1.0
+ * @since 11/11/2015
  */
 public class ProduitAlimentaire {
 

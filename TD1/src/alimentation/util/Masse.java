@@ -6,6 +6,8 @@ package alimentation.util;
  * 
  * @author METAYER-VAREILLE
  * @see MasseImpl
+ * @version 1.0
+ * @since 11/11/2015
  */
 public interface Masse {
 

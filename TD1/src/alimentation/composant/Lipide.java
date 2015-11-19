@@ -10,6 +10,8 @@ package alimentation.composant;
  * 
  * @author METAYER-VAREILLE
  * @see Aliment pour les méthodes associées
+ * @version 1.0
+ * @since 11/11/2015
  */
 public class Lipide extends Aliment {
 

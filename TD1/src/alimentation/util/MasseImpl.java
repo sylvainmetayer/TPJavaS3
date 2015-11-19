@@ -9,6 +9,8 @@ package alimentation.util;
  * 
  * @author METAYER-VAREILLE
  * @see Masse pour l'interface correspondante
+ * @version 1.0
+ * @since 11/11/2015
  */
 public class MasseImpl implements Masse {
 
