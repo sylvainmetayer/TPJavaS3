@@ -25,9 +25,9 @@ public class Trader implements Comparable<Trader> {
 	 * @throws NullPointerException
 	 */
 	public Trader(String identifiant, String nom, String ville) {
-		Objects.requireNonNull(nom, "Le nom doit être renseigné");
-		Objects.requireNonNull(ville, "La ville doit être renseignée");
-		Objects.requireNonNull(identifiant, "L'identifiant doit être renseigné");
+		Objects.requireNonNull(nom, "Le nom doit ï¿½tre renseignï¿½");
+		Objects.requireNonNull(ville, "La ville doit ï¿½tre renseignï¿½e");
+		Objects.requireNonNull(identifiant, "L'identifiant doit ï¿½tre renseignï¿½");
 
 		if (!identifiant.matches(PATTERN_IDENTIFIANT)) {
 			throw new IllegalArgumentException("Le pattern n'est pas respectÃ©");
@@ -51,6 +51,7 @@ public class Trader implements Comparable<Trader> {
 	 * Setter permettant de modifier l'identifiant du trader
 	 */
 	public void setIdentifiant(String identifiant) {
+		Objects.requireNonNull(identifiant, "L'identifiantt doit etre non nul");
 		this.identifiant = identifiant;
 	}
 
@@ -67,6 +68,7 @@ public class Trader implements Comparable<Trader> {
 	 * Setter modifiant le nom du trader
 	 */
 	public void setNom(String nom) {
+		Objects.requireNonNull(nom, "Le nom doit etre non nul");
 		this.nom = nom;
 	}
 
@@ -83,6 +85,7 @@ public class Trader implements Comparable<Trader> {
 	 * Setter permettant de modifier la ville du trader
 	 */
 	public void setVille(String ville) {
+		Objects.requireNonNull(ville, "La ville doit etre non nulle");
 		this.ville = ville;
 	}
 
@@ -99,6 +102,7 @@ public class Trader implements Comparable<Trader> {
 	 * Setter permettant de modifier la liste des transactions du trader
 	 */
 	public void setTransactions(List<Transaction> transactions) {
+		Objects.requireNonNull(transactions, "Les transactions doivent etre non nulles");
 		this.transactions = transactions;
 	}
 	/**
@@ -113,7 +117,7 @@ public class Trader implements Comparable<Trader> {
 	/**
 	 * @param Object
 	 * @return equals boolean
-	 * Retourne vrai si l'objet passé en paramètre est égal à l'objet courant, faux sinon
+	 * Retourne vrai si l'objet passï¿½ en paramï¿½tre est ï¿½gal ï¿½ l'objet courant, faux sinon
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -137,18 +141,19 @@ public class Trader implements Comparable<Trader> {
 	/**
 	 * @param Trader
 	 * @return compareTo
-	 * Retourne la comparaison entre un trader en paramètre et celui courant
+	 * Retourne la comparaison entre un trader en paramï¿½tre et celui courant
 	 */
 	@Override
 	public int compareTo(Trader t) {
+		Objects.requireNonNull(t, "Le trader doit etre non nul");
 		return this.identifiant.compareTo(t.getIdentifiant());
 	}
 	/**
 	 * @param t
-	 * Permet d'ajouter une transaction à la liste des transactions du trader
+	 * Permet d'ajouter une transaction ï¿½ la liste des transactions du trader
 	 */
 	public void addTransaction(Transaction t) {
-		Objects.requireNonNull(t, "La transaction doit être renseignée");
+		Objects.requireNonNull(t, "La transaction doit ï¿½tre renseignï¿½e");
 
 		this.transactions.add(t);
 	}

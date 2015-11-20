@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Cette classe permet de tester le simuler le fonctionnement d'une bourse, avec
- * des Trader et des Transaction. De plus, on teste l'affichage des Filter et
+ * Cette classe permet de tester et de simuler le fonctionnement d'une bourse, avec
+ * des Traders et des Transactions. De plus, on teste l'affichage des Filter et
  * Predicat pour filtrer les affichages.
  * 
  * @author VAREILLE-METAYER
