@@ -6,6 +6,7 @@ package bourse;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author VAREILLE-METAYER
@@ -24,14 +25,9 @@ public class Trader implements Comparable<Trader> {
 	 * @throws NullPointerException
 	 */
 	public Trader(String identifiant, String nom, String ville) {
-		if (nom == null || ville == null) {
-			throw new NullPointerException(
-					"Le nom et la ville ne peuvent etre nul");
-		}
-
-		if (identifiant == null) {
-			throw new NullPointerException("L'identifiant ne peut etre null");
-		}
+		Objects.requireNonNull(nom, "Le nom doit être renseigné");
+		Objects.requireNonNull(ville, "La ville doit être renseignée");
+		Objects.requireNonNull(identifiant, "L'identifiant doit être renseigné");
 
 		if (!identifiant.matches(PATTERN_IDENTIFIANT)) {
 			throw new IllegalArgumentException("Le pattern n'est pas respectÃ©");
@@ -152,9 +148,7 @@ public class Trader implements Comparable<Trader> {
 	 * Permet d'ajouter une transaction à la liste des transactions du trader
 	 */
 	public void addTransaction(Transaction t) {
-		if (t == null) {
-			throw new NullPointerException("la transaction ne peut etre nulle");
-		}
+		Objects.requireNonNull(t, "La transaction doit être renseignée");
 
 		this.transactions.add(t);
 	}
