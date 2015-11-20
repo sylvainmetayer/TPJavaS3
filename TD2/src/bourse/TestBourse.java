@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Cette classe permet de tester et de simuler le fonctionnement d'une bourse, avec
- * des Traders et des Transactions. De plus, on teste l'affichage des Filter et
- * Predicat pour filtrer les affichages.
+ * Cette classe permet de tester et de simuler le fonctionnement d'une bourse,
+ * avec des Traders et des Transactions. De plus, on teste l'affichage des
+ * Filter et Predicat pour filtrer les affichages.
  * 
  * @author VAREILLE-METAYER
  * @since 19 nov. 2015
@@ -62,7 +62,7 @@ public class TestBourse {
 			}
 		}));
 
-		System.out.println("Affichage des Trader appartenant à la ville V2 :");
+		System.out.println("\nAffichage des Trader appartenant à la ville V2 :");
 		System.out.println(Filter.filter(traders, new Predicat<Trader>() {
 			@Override
 			public boolean test(Trader t) {
@@ -70,7 +70,7 @@ public class TestBourse {
 			}
 		}));
 
-		System.out.println("Affichage des Trader appartenant à la ville V1 et ayant une transaction au moins :");
+		System.out.println("\nAffichage des Trader appartenant à la ville V1 et ayant une transaction au moins :");
 		System.out.println(Filter.filter(traders, new Predicat<Trader>() {
 			@Override
 			public boolean test(Trader t) {
