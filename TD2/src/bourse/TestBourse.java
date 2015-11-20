@@ -8,6 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Cette classe permet de tester le simuler le fonctionnement d'une bourse, avec
+ * des Trader et des Transaction. De plus, on teste l'affichage des Filter et
+ * Predicat pour filtrer les affichages.
+ * 
  * @author VAREILLE-METAYER
  * @since 19 nov. 2015
  * @version 1.0
@@ -15,7 +19,10 @@ import java.util.List;
 public class TestBourse {
 
 	/**
+	 * Point d'entrée de l'appplication
+	 * 
 	 * @param args
+	 *            {@link String}
 	 */
 	public static void main(String[] args) {
 		List<Trader> traders = new ArrayList<>();
@@ -42,13 +49,34 @@ public class TestBourse {
 		Trader t5 = new Trader("5", "T5", "V5");
 		Trader t6 = new Trader("6", "T6", "V6");
 
+		// On ajoute tous les traders dans la liste.
 		traders.addAll(Arrays.asList(t1, t2, t3, t4, t5, t6));
-		
+
+		// On déclare de façon anonyme l'implémentation des predicats
+
+		System.out.println("Affichage des Trader appartenant à la ville V1 :");
 		System.out.println(Filter.filter(traders, new Predicat<Trader>() {
 			@Override
 			public boolean test(Trader t) {
 				return t.getVille().equals("V1");
 			}
 		}));
+
+		System.out.println("Affichage des Trader appartenant à la ville V2 :");
+		System.out.println(Filter.filter(traders, new Predicat<Trader>() {
+			@Override
+			public boolean test(Trader t) {
+				return t.getVille().equals("V2");
+			}
+		}));
+
+		System.out.println("Affichage des Trader appartenant à la ville V1 et ayant une transaction au moins :");
+		System.out.println(Filter.filter(traders, new Predicat<Trader>() {
+			@Override
+			public boolean test(Trader t) {
+				return t.getVille().equals("V1") && t.getTransactions().size() > 0;
+			}
+		}));
+
 	}
 }
