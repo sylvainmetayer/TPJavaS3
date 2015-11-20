@@ -18,7 +18,11 @@ public class Trader implements Comparable<Trader> {
 	private String nom;
 	private String ville;
 	private List<Transaction> transactions;
-
+	/**
+	 * Constructeur.
+	 * @param identifiant String, nom String, ville String
+	 * @throws NullPointerException
+	 */
 	public Trader(String identifiant, String nom, String ville) {
 		if (nom == null || ville == null) {
 			throw new NullPointerException(
@@ -48,7 +52,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @param identifiant
-	 *            :
+	 * Setter permettant de modifier l'identifiant du trader
 	 */
 	public void setIdentifiant(String identifiant) {
 		this.identifiant = identifiant;
@@ -56,6 +60,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @return nom String
+	 * Accesseur retournant le nom du trader
 	 */
 	public String getNom() {
 		return nom;
@@ -63,7 +68,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @param nom
-	 *            :
+	 * Setter modifiant le nom du trader
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -71,6 +76,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @return ville String
+	 * Accesseur retournant le nom de la ville du trader
 	 */
 	public String getVille() {
 		return ville;
@@ -78,7 +84,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @param ville
-	 *            :
+	 * Setter permettant de modifier la ville du trader
 	 */
 	public void setVille(String ville) {
 		this.ville = ville;
@@ -86,6 +92,7 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @return transactions List<Transaction>
+	 * Accesseur retournant la liste des transactions du trader
 	 */
 	public List<Transaction> getTransactions() {
 		return Collections.unmodifiableList(transactions);
@@ -93,21 +100,24 @@ public class Trader implements Comparable<Trader> {
 
 	/**
 	 * @param transactions
-	 *            :
+	 * Setter permettant de modifier la liste des transactions du trader
 	 */
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
 	}
-
+	/**
+	 * @return hashcode int
+	 * Retourne le hashcode d'un trader
+	 */
 	@Override
 	public int hashCode() {
 		return this.identifiant.hashCode();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
+	/**
+	 * @param Object
+	 * @return equals boolean
+	 * Retourne vrai si l'objet passé en paramètre est égal à l'objet courant, faux sinon
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -117,35 +127,30 @@ public class Trader implements Comparable<Trader> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Trader other = (Trader) obj;
-		if (identifiant == null) {
-			if (other.identifiant != null)
-				return false;
-		} else if (!identifiant.equals(other.identifiant))
+		Trader trader = (Trader) obj;
+		if(this.identifiant != trader.getIdentifiant())
 			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
+		if(this.nom != trader.getNom())
 			return false;
-		if (transactions == null) {
-			if (other.transactions != null)
-				return false;
-		} else if (!transactions.equals(other.transactions))
+		if(!this.ville.equals(trader.getVille()))
 			return false;
-		if (ville == null) {
-			if (other.ville != null)
-				return false;
-		} else if (!ville.equals(other.ville))
+		if(!this.transactions.equals(trader.getTransactions()))
 			return false;
 		return true;
 	}
-
+	/**
+	 * @param Trader
+	 * @return compareTo
+	 * Retourne la comparaison entre un trader en paramètre et celui courant
+	 */
 	@Override
 	public int compareTo(Trader t) {
 		return this.identifiant.compareTo(t.getIdentifiant());
 	}
-
+	/**
+	 * @param t
+	 * Permet d'ajouter une transaction à la liste des transactions du trader
+	 */
 	public void addTransaction(Transaction t) {
 		if (t == null) {
 			throw new NullPointerException("la transaction ne peut etre nulle");
@@ -153,15 +158,13 @@ public class Trader implements Comparable<Trader> {
 
 		this.transactions.add(t);
 	}
-	
+	/**
+	 * @return String
+	 * Retourne le toString() du trader
+	 */
 	@Override
 	public String toString(){
 		return "Trader [ identifiant="+this.getIdentifiant()+", nom="+this.getNom()+", ville="+this.getVille()+
 				", transactions="+this.transactions+" ]";
-	}/*
-	private static final String PATTERN_IDENTIFIANT = "[A-Z 1-9]{1,}";
-	private String identifiant;
-	private String nom;
-	private String ville;
-	private List<Transaction> transactions;*/
+	}
 }
