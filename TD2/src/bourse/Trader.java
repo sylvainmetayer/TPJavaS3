@@ -153,5 +153,15 @@ public class Trader implements Comparable<Trader> {
 
 		this.transactions.add(t);
 	}
-
+	
+	@Override
+	public String toString(){
+		return "Trader [ identifiant="+this.getIdentifiant()+", nom="+this.getNom()+", ville="+this.getVille()+
+				", transactions="+this.transactions+" ]";
+	}/*
+	private static final String PATTERN_IDENTIFIANT = "[A-Z 1-9]{1,}";
+	private String identifiant;
+	private String nom;
+	private String ville;
+	private List<Transaction> transactions;*/
 }
