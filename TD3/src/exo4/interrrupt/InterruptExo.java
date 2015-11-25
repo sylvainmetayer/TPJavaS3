@@ -1,6 +1,3 @@
-/**
- * 
- */
 package exo4.interrrupt;
 
 /**
@@ -23,13 +20,12 @@ public class InterruptExo implements Runnable {
 				Thread.sleep(200);
 			}
 		} catch (InterruptedException e) {
+			System.out.println("Fin du Thread !");
 			e.printStackTrace();
 		}
 	}
 
-	public void arreter() {
-		System.out.println("TOTO"); //TODO fix bug
-		Thread.currentThread().interrupt();
-	}
+	// Utiliser la méthode interrupt directement sur le Thread, car la méthode
+	// arreter ne fonctionne pas.
 
 }

@@ -15,17 +15,17 @@ public class TestInterrupt {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		InterruptExo interrupt = new InterruptExo();
-
-		new Thread(interrupt).start();
+		Thread t = new Thread(new InterruptExo());
+		t.start();
 
 		try {
-			Thread.sleep(500);
+			Thread.sleep(800);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
-		interrupt.arreter();
+		// interrupt.arreter(); //Ne fonctionne pas
+		t.interrupt(); // fonctionne
 
 	}
 
