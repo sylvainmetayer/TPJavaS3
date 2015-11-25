@@ -16,8 +16,8 @@ public class PairImpair {
 	private static class Pair extends Thread {
 		private Compteur compteur;
 
-		public Pair() {
-			this.compteur = new Compteur();
+		public Pair(Compteur compteur) {
+			this.compteur = compteur;
 		}
 
 		@Override
@@ -44,8 +44,8 @@ public class PairImpair {
 	private static class Impair extends Thread {
 		private Compteur compteur;
 
-		public Impair() {
-			this.compteur = new Compteur();
+		public Impair(Compteur compteur) {
+			this.compteur = compteur;
 		}
 
 		@Override
@@ -71,8 +71,9 @@ public class PairImpair {
 
 	public static void main(String[] args) {
 
-		Thread pair = new Pair();
-		Thread impair = new Impair();
+		final Compteur compteur = new Compteur();
+		Thread pair = new Pair(compteur);
+		Thread impair = new Impair(compteur);
 
 		pair.start();
 		impair.start();
