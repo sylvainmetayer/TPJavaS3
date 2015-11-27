@@ -7,12 +7,12 @@ package exercice1.realisation;
  * @author VAREILLE-METAYER
  * @since 20 nov. 2015
  * @version 1.0
- *
+ *	Cette classe étend la classe Thread.
  */
 public class WhoIsThread extends Thread{
 
 	/**
-	 * 
+	 * Constructeur d'un WhoIsThread
 	 */
 	public WhoIsThread() {
 		// TODO Auto-generated constructor stub
