@@ -6,15 +6,16 @@ package exo2.Demon;
 import exercice1.realisation.WhoIsThread;
 
 /**
+ * Cette application met en oeuvre un thread Démon.
  * @author VAREILLE-METAYER
  * @since 27 nov. 2015
  * @version 1.0
- *
  */
 public class TestDemon {
 
 	/**
 	 * @param args
+	 * 			{@link String}
 	 */
 	public static void main(String[] args) {
 		final Demon t = new Demon();

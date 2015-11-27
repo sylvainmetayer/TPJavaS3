@@ -7,7 +7,6 @@ package exo5;
  * @author VAREILLE-METAYER
  * @since 25 nov. 2015
  * @version 1.0
- *
  */
 public class Compteur {
 

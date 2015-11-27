@@ -4,10 +4,10 @@
 package exo2.Demon;
 
 /**
+ *	Cette classe étend la classe Thread.
  * @author VAREILLE-METAYER
  * @since 27 nov. 2015
  * @version 1.0
- *	Cette classe étend la classe Thread.
  */
 public class Demon extends Thread{
 
@@ -17,7 +17,9 @@ public class Demon extends Thread{
 	public Demon() {
 		setDaemon(true);
 	}
-	
+	/**
+	 * @see java.lang.Thread
+	 */
 	@Override
 	public void run(){
 		try{
@@ -33,7 +35,9 @@ public class Demon extends Thread{
 			System.out.println("Pas un démon");
 		}
 	}
-	
+	/**
+	 * @see java.lang.Object
+	 */
 	@Override
 	public String toString(){
 		return Thread.currentThread().getName();
