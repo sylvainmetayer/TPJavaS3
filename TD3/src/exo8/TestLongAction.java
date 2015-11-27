@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 
 /**
  * @author VAREILLE-METAYER
@@ -23,32 +25,33 @@ public class TestLongAction extends JFrame {
 
 	public TestLongAction() {
 		btnAction = new JButton("Start");
-		// Ajout du listener bouton
 		btnAction.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// new LongAction().traitementLong(); //freeze la fenetre
-				new LongActionMethodeUne().start(); // solution 1
-				// solution 2
+				// new LongAction().traitementLong(); // freeze la fenetre
+				// new LongActionMethodeUne().start(); // solution 1
+				new MonSwingWorker().execute(); // solution 2
 			}
 		});
 		final Container contentPane = getContentPane();
 		contentPane.setLayout(new GridLayout(2, 1));
 		contentPane.add(btnAction);
-		setSize(400, 800);
+
 		setTitle("Test de LongAction");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// pack();
+		pack();
+		setSize(400, 400);
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		new TestLongAction();
-
 	}
 }
 
 // Etant donné qu'on travaille sur le même Thread, le rafraichissement de la
 // fenêtre est bloqué durant le traitement de l'action longue.
 
-// LEs deux facons : Une en implémentant runnable, l'autre extends Thread ?
+// Les deux facons : Une en creeant une classe qui extends Thread, et qui traite
+// l'action longue dans un thread séparé. La deuxième solution est d'utiliser le
+// SwingWorker afin de réaliser le traitement
