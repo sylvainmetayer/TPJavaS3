@@ -41,6 +41,7 @@ public class TestSynchronization {
 				e.printStackTrace();
 			}
 		}
+
 		System.out.println(compteur.getL());
 	}
 
