@@ -32,7 +32,7 @@ public class PairImpair {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
-						System.out.println(this.getName() + ", Compteur : " + this.compteur.getL() + ", i =" + i);
+						System.out.println(this.getName() + ", Compteur : " + this.compteur.getL());
 						compteur.next(); // on incrémente
 						compteur.notifyAll(); // on notifie l'autre Thread
 					}
@@ -60,7 +60,7 @@ public class PairImpair {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
-						System.out.println(this.getName() + ", Compteur : " + this.compteur.getL() + ", i =" + i);
+						System.out.println(this.getName() + ", Compteur : " + this.compteur.getL());
 						compteur.next(); // on incrémente
 						compteur.notifyAll(); // on notifie l'autre Thread
 					}
@@ -80,3 +80,6 @@ public class PairImpair {
 	}
 
 }
+
+// Question : Non, il n'est pas possible d'utiliser une instance de la classe
+// java.lang.Integer. //TODO justifer

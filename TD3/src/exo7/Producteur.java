@@ -39,10 +39,10 @@ public class Producteur extends Thread {
 		try {
 			String val = "Super production !";
 			synchronized (strings) {
-				while (strings.size() > this.SIZE) {
+				while (strings.size() > this.SIZE) { // liste pleine
 					strings.wait();
 				}
-				System.out.println(this.getName() + " produit : " + val);
+				System.out.println(this.getName() + " a produit : " + val);
 				strings.add(val);
 				strings.notifyAll();
 			}

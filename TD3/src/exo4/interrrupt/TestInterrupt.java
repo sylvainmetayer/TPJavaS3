@@ -30,3 +30,7 @@ public class TestInterrupt {
 	}
 
 }
+
+// Si l'on affiche un point toute les 10_000ms, on aura un seul point
+// d'afficher, et on arretera directement le Thread, car le rty/catch contient
+// le while qui affiche les points

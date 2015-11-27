@@ -27,15 +27,18 @@ public class TestLongAction extends JFrame {
 		btnAction.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new LongAction().traitementLong();
+				// new LongAction().traitementLong(); //freeze la fenetre
+				new LongActionMethodeUne().start(); // solution 1
+				// solution 2
 			}
 		});
 		final Container contentPane = getContentPane();
 		contentPane.setLayout(new GridLayout(2, 1));
 		contentPane.add(btnAction);
+		setSize(400, 800);
 		setTitle("Test de LongAction");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		pack();
+		// pack();
 		setVisible(true);
 	}
 
@@ -44,3 +47,8 @@ public class TestLongAction extends JFrame {
 
 	}
 }
+
+// Etant donné qu'on travaille sur le même Thread, le rafraichissement de la
+// fenêtre est bloqué durant le traitement de l'action longue.
+
+// LEs deux facons : Une en implémentant runnable, l'autre extends Thread ?

@@ -34,7 +34,7 @@ public class Consommateur extends Thread {
 		try {
 			synchronized (strings) {
 
-				while (strings.size() <= 0) {
+				while (strings.size() <= 0) { // si pas de chaine dans la liste
 					strings.wait();
 				}
 				s = strings.get(0);
@@ -42,8 +42,9 @@ public class Consommateur extends Thread {
 				strings.notifyAll();
 
 			}
-			System.out.println(this.getName() + " consomme : " + s);
-			Thread.sleep(1000);
+			System.out.println(this.getName() + " a consommé : " + s);
+			Thread.sleep(1000); // 2*500, le producteur produit plus vite que le
+								// consommateur
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
