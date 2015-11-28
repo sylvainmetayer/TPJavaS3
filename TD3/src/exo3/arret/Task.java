@@ -57,7 +57,8 @@ public class Task implements Runnable {
 	/**
 	 * Méthode <b>synchronisée</b> qui permet de savoir l'état du Thread
 	 * 
-	 * @return
+	 * @return isStopped
+	 * 				{@link Booleann}
 	 */
 	public synchronized boolean isStopped() {
 		return this.isStopped;
