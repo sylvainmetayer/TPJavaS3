@@ -5,6 +5,7 @@ package exo4.interrrupt;
 
 /**
  * Cette application permet d'interrompre un thread "proprement".
+ * 
  * @author VAREILLE-METAYER
  * @since 20 nov. 2015
  * @version 1.0
@@ -12,8 +13,10 @@ package exo4.interrrupt;
 public class TestInterrupt {
 
 	/**
+	 * Point d'entrée de l'application
+	 * 
 	 * @param args
-	 * 			{@link String}
+	 *            {@link String}
 	 */
 	public static void main(String[] args) {
 		Thread t = new Thread(new InterruptExo());
@@ -25,13 +28,14 @@ public class TestInterrupt {
 			e.printStackTrace();
 		}
 
-		// interrupt.arreter(); //Ne fonctionne pas
-		t.interrupt(); // fonctionne
+		// interrupt.arreter(); //Ne fonctionne pas, utiliser la ligne
+		// ci-dessous
+		t.interrupt();
 
 	}
 
 }
 
 // Si l'on affiche un point toute les 10_000ms, on aura un seul point
-// d'afficher, et on arretera directement le Thread, car le rty/catch contient
-// le while qui affiche les points
+// d'affiché, et on arretera directement le Thread, car le try/catch contient
+// le while qui affiche les points.

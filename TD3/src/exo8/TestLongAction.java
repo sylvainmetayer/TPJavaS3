@@ -14,6 +14,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 /**
+ * Classe de Test qui permet de tester les différentes façon de gérer
+ * l'affichage d'une interface graphique et le traitement d'une action longue.
+ * 
  * @author VAREILLE-METAYER
  * @since 25 nov. 2015
  * @version 1.0
@@ -23,6 +26,10 @@ public class TestLongAction extends JFrame {
 	private static final long serialVersionUID = 1L;
 	final JButton btnAction;
 
+	/***
+	 * Constructeur de l'interface graphique, qui définit en même temps
+	 * l'écouteur
+	 */
 	public TestLongAction() {
 		btnAction = new JButton("Start");
 		btnAction.addActionListener(new ActionListener() {
@@ -52,6 +59,9 @@ public class TestLongAction extends JFrame {
 // Etant donné qu'on travaille sur le même Thread, le rafraichissement de la
 // fenêtre est bloqué durant le traitement de l'action longue.
 
-// Les deux facons : Une en creeant une classe qui extends Thread, et qui traite
-// l'action longue dans un thread séparé. La deuxième solution est d'utiliser le
-// SwingWorker afin de réaliser le traitement
+/**
+ * Les deux facons : Une en creeant une classe qui extends Thread, et qui traite
+ * l'action longue dans un thread séparé. <br>
+ * La deuxième solution est d'utiliser le SwingWorker afin de réaliser le
+ * traitement
+ */
