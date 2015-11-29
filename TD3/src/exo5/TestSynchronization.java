@@ -28,6 +28,7 @@ public class TestSynchronization {
 			this.compteur = c;
 		}
 		/**
+		 * Méthode qui incrémente le compteur 1 000 000 de fois
 		 * @see java.lang.Thread
 		 */
 		@Override
@@ -48,7 +49,7 @@ public class TestSynchronization {
 				new ConcurrentThread(compteur), new ConcurrentThread(compteur), new ConcurrentThread(compteur),
 				new ConcurrentThread(compteur), new ConcurrentThread(compteur) };
 
-		for (Thread threads : thread) {
+		for (Thread threads : thread) { //on démarre chaque thread
 			threads.start();
 			try {
 				threads.join();

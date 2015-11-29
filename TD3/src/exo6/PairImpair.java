@@ -4,6 +4,8 @@
 package exo6;
 
 /**
+ * Cette application permet de lancer deux threads qui communiquent <br>
+ * affichant pour l'un les nombres pairs, et pour l'autre les impairs.
  * @author VAREILLE-METAYER
  * @since 25 nov. 2015
  * @version 1.0
@@ -12,14 +14,26 @@ package exo6;
 public class PairImpair {
 
 	private final static int MAX = 20; // limite d'affichage
-
+	/**
+	 * Classe statique qui étend la classe Thread, permettant de gérer les nombres pairs.
+	 * @author VAREILLE-METAYER
+	 * @since 29 nov. 2015
+	 * @version 1.0
+	 */
 	private static class Pair extends Thread {
 		private Compteur compteur;
-
+		/**
+		 * Constructeur d'un objet Pair.
+		 * @param compteur
+		 */
 		public Pair(Compteur compteur) {
 			this.compteur = compteur;
 		}
-
+		/**
+		 * Méthode <b>synchronisée<b> permettant d'afficher les nombres pairs.<br>
+		 * Si le nombre est impair, on attend, en notifiant le thread impair.
+		 * @see java.lang.Thread
+		 */
 		@Override
 		public void run() {
 			System.out.println("Début " + this.getName() + ", pair.");
@@ -40,14 +54,26 @@ public class PairImpair {
 			}
 		}
 	}
-
+	/**
+	 * Classe statique qui étend la classe Thread, permettant de gérer les nombres impairs.
+	 * @author VAREILLE-METAYER
+	 * @since 29 nov. 2015
+	 * @version 1.0
+	 */
 	private static class Impair extends Thread {
 		private Compteur compteur;
-
+		/**
+		 * Constructeur d'un objet Impair.
+		 * @param compteur
+		 */
 		public Impair(Compteur compteur) {
 			this.compteur = compteur;
 		}
-
+		/**
+		 * Méthode <b>synchronisée<b> permettant d'afficher les nombres impairs.<br>
+		 * Si le nombre est pair, on attend, en notifiant le thread pair.
+		 * @see java.lang.Thread
+		 */
 		@Override
 		public void run() {
 			System.out.println("Début " + this.getName() + ", impair.");
@@ -68,7 +94,10 @@ public class PairImpair {
 			}
 		}
 	}
-
+	/**
+	 * @param args
+	 * 			{@link String}
+	 */
 	public static void main(String[] args) {
 
 		final Compteur compteur = new Compteur();

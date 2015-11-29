@@ -18,6 +18,7 @@ public class Demon extends Thread{
 		setDaemon(true);
 	}
 	/**
+	 * Affiche 20 fois le nom du thread toutes les 500 ms
 	 * @see java.lang.Thread
 	 */
 	@Override
@@ -36,6 +37,7 @@ public class Demon extends Thread{
 		}
 	}
 	/**
+	 * Retourne le nom du Thread courant
 	 * @see java.lang.Object
 	 */
 	@Override

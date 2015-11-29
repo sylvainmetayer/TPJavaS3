@@ -16,6 +16,7 @@ public class InterruptExo implements Runnable {
 		super();
 	}
 	/**
+	 * Affiche "." toutes les 200 ms, tant que le thread n'est pas interrompu
 	 * @see java.lang.Thread
 	 */
 	@Override

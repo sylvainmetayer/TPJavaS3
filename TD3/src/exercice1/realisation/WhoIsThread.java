@@ -18,6 +18,7 @@ public class WhoIsThread extends Thread{
 		// TODO Auto-generated constructor stub
 	}
 	/**
+	 * Affiche 20 fois le nom du thread toutes les 500 ms
 	 * @see java.lang.Thread
 	 */
 	@Override
@@ -32,6 +33,7 @@ public class WhoIsThread extends Thread{
 		}
 	}
 	/**
+	 * Retourne le nom du Thread courant
 	 * @see java.lang.Object
 	 */
 	@Override
