@@ -4,7 +4,7 @@
 package exercice1.realisation;
 
 /**
- * Cettee application met en oeuvre un thread, affichant son nom.
+ * Cette application met en oeuvre un thread, affichant son nom.
  * @author VAREILLE-METAYER
  * @since 20 nov. 2015
  * @version 1.0
@@ -12,6 +12,7 @@ package exercice1.realisation;
 public class TestWhoIsThread {
 
 	/**
+	 * Point d'entrée de l'application
 	 * @param args
 	 * 			{@link String}
 	 */
