@@ -28,8 +28,6 @@ public class TestInterrupt {
 			e.printStackTrace();
 		}
 
-		// interrupt.arreter(); //Ne fonctionne pas, utiliser la ligne
-		// ci-dessous
 		t.interrupt();
 
 	}

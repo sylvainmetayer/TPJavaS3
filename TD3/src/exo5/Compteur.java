@@ -12,7 +12,6 @@ package exo5;
  */
 public class Compteur {
 
-	// private java.lang.Integer l;
 	private long l;
 
 	/**

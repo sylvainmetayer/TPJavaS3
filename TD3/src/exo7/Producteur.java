@@ -22,7 +22,9 @@ public class Producteur extends Thread {
 	 * chaine à produire
 	 * 
 	 * @param SIZE
+	 *            {@link Integer}
 	 * @param strings
+	 *            {@link String}
 	 * 
 	 */
 	public Producteur(int SIZE, List<String> strings) {

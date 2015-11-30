@@ -6,6 +6,9 @@ package exo9;
 import java.util.Date;
 
 /**
+ * Classe qui implemente {@link Runnable} et qui permet de simuler le
+ * fonctionnement d'une tâche.
+ * 
  * @author VAREILLE-METAYER
  * @since 27 nov. 2015
  * @version 1.0
@@ -14,14 +17,14 @@ import java.util.Date;
 public class Task implements Runnable {
 
 	/**
-	 * 
+	 * Constructeur
 	 */
 	public Task() {
 
 	}
 
 	/*
-	 * (non-Javadoc)
+	 * Affiche le nom du Thread, et l'heure, avec un intervalle de 1 seconde
 	 * 
 	 * @see java.lang.Runnable#run()
 	 */
@@ -37,11 +40,15 @@ public class Task implements Runnable {
 			}
 			System.out.println(heure);
 		}
+		System.out.println("FIN THREAD");
 
 	}
 	// Ce n'est pas thread-safe, car l'affichage du nom du Thread et l'heure se
 	// font dans un même thread.
 
+	/**
+	 * Retourne le nom du Thread
+	 */
 	@Override
 	public String toString() {
 		return Thread.currentThread().getName();

@@ -3,12 +3,12 @@
  */
 package exo9;
 
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
+ * Classe de test qui permet de tester l'executeur de Service
+ * 
  * @author VAREILLE-METAYER
  * @since 27 nov. 2015
  * @version 1.0
@@ -17,7 +17,10 @@ import java.util.concurrent.TimeUnit;
 public class TestExecutorService {
 
 	/**
+	 * Point d'entrée de l'application
+	 * 
 	 * @param args
+	 *            {@link String}
 	 */
 	public static void main(String[] args) {
 		ExecutorService exec = Executors.newFixedThreadPool(2);
@@ -25,11 +28,13 @@ public class TestExecutorService {
 		exec.submit(new Task());
 		exec.submit(new Task());
 		exec.submit(new Task());
-		// Si l'on soumet 3 tâche, la troisième tache sera lancée que lorsque un
+		// Si l'on soumet 3 tâches, la troisième tache sera lancée que lorsque
+		// un
 		// tache est finie, et que donc un emplacement dans le pool de Thread
 		// est disponible
 
-		exec.shutdown(); // on utilise
+		exec.shutdown();
+		// exec.submit(new Task()); // la tâche n'est pas acceptée
 
 	}
 
