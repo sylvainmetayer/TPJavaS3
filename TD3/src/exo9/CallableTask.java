@@ -11,9 +11,10 @@ import java.util.concurrent.Callable;
  * @version 1.0
  *
  */
-public class CallableTask implements Callable<Task> {
-	
+public class CallableTask implements Callable<Integer> {
+
 	private int compteur;
+
 	/**
 	 * Constructeur d'un objet CallableTask
 	 */
@@ -21,11 +22,13 @@ public class CallableTask implements Callable<Task> {
 	}
 
 	/**
-	 * Cette méthode incrémente un compteur 10 fois toutes les 1_000 ms, puis retourne le résultat
+	 * Cette méthode incrémente un compteur 10 fois toutes les 1_000 ms, puis
+	 * retourne le résultat
+	 * 
 	 * @see java.util.concurrent.Callable
 	 */
 	@Override
-	public Task call() throws Exception {
+	public Integer call() throws Exception {
 		compteur = 0;
 		for (int i = 0; i < 10; i++) {
 			compteur++;
@@ -35,7 +38,7 @@ public class CallableTask implements Callable<Task> {
 				ie.printStackTrace();
 			}
 		}
-		return null; //TODO retourner le compteur
+		return compteur;
 	}
 
 }

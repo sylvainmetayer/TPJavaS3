@@ -36,6 +36,17 @@ public class TestExecutorService {
 		exec.shutdown();
 		// exec.submit(new Task()); // la tâche n'est pas acceptée
 
+		CallableTask mytask = new CallableTask();
+		try {
+			System.out.println("Callable task : " + mytask.call());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }
+
+// Pour afficher le résultat, on utilise la méthode call, qui retourne un
+// Integer.
