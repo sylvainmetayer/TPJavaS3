@@ -17,13 +17,13 @@ import java.util.Date;
 public class Task implements Runnable {
 
 	/**
-	 * Constructeur
+	 * Constructeur d'un objet Task
 	 */
 	public Task() {
 
 	}
 
-	/*
+	/**
 	 * Affiche le nom du Thread, et l'heure, avec un intervalle de 1 seconde
 	 * 
 	 * @see java.lang.Runnable#run()

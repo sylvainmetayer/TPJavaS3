@@ -12,22 +12,30 @@ import java.util.concurrent.Callable;
  *
  */
 public class CallableTask implements Callable<Task> {
-
+	
+	private int compteur;
 	/**
-	 * Constructeur
+	 * Constructeur d'un objet CallableTask
 	 */
 	public CallableTask() {
 	}
 
 	/**
-	 * 
+	 * Cette méthode incrémente un compteur 10 fois toutes les 1_000 ms, puis retourne le résultat
+	 * @see java.util.concurrent.Callable
 	 */
 	@Override
 	public Task call() throws Exception {
+		compteur = 0;
 		for (int i = 0; i < 10; i++) {
-			
+			compteur++;
+			try {
+				Thread.sleep(1_000);
+			} catch (InterruptedException ie) {
+				ie.printStackTrace();
+			}
 		}
-		return null;
+		return null; //TODO retourner le compteur
 	}
 
 }
