@@ -5,6 +5,7 @@ package exo9;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Classe de test qui permet de tester l'executeur de Service
@@ -28,6 +29,8 @@ public class TestExecutorService {
 		exec.submit(new Task());
 		exec.submit(new Task());
 		exec.submit(new Task());
+		Future<Integer> res = exec.submit(new CallableTask());
+
 		// Si l'on soumet 3 tâches, la troisième tache sera lancée que lorsque
 		// un
 		// tache est finie, et que donc un emplacement dans le pool de Thread
@@ -36,9 +39,9 @@ public class TestExecutorService {
 		exec.shutdown();
 		// exec.submit(new Task()); // la tâche n'est pas acceptée
 
-		CallableTask mytask = new CallableTask();
 		try {
-			System.out.println("Callable task : " + mytask.call());
+			int resu = res.get();
+			System.out.println("Callable task : " + resu);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
