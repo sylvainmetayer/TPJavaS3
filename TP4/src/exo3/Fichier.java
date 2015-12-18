@@ -82,8 +82,9 @@ public class Fichier extends ComposantSysteme {
 	 */
 	@Override
 	public void acceptVisiteur(Visiteur visiteur) {
+		visiteur.beforeVisit(this);
 		visiteur.visit(this);
-
+		visiteur.afterVisit(this);
 	}
 
 	/*
@@ -94,7 +95,7 @@ public class Fichier extends ComposantSysteme {
 	@Override
 	public void visit(Fichier fichier) {
 		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException();
 	}
 
 	/*
@@ -105,7 +106,7 @@ public class Fichier extends ComposantSysteme {
 	@Override
 	public void visit(Repertoire repertoire) {
 		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException();
 	}
 
 	/*
@@ -115,8 +116,7 @@ public class Fichier extends ComposantSysteme {
 	 */
 	@Override
 	public void beforeVisit(ComposantSysteme composant) {
-		// TODO Auto-generated method stub
-
+		throw new UnsupportedOperationException();
 	}
 
 	/*
@@ -126,7 +126,8 @@ public class Fichier extends ComposantSysteme {
 	 */
 	@Override
 	public void afterVisit(ComposantSysteme composant) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException(); // TODO Auto-generated method
+													// stub
 
 	}
 
