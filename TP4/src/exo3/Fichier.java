@@ -82,9 +82,7 @@ public class Fichier extends ComposantSysteme {
 	 */
 	@Override
 	public void acceptVisiteur(Visiteur visiteur) {
-		visiteur.beforeVisit(this);
 		visiteur.visit(this);
-		visiteur.afterVisit(this);
 	}
 
 	/*

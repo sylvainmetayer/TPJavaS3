@@ -93,12 +93,9 @@ public class Repertoire extends ComposantSysteme {
 		visiteur.beforeVisit(this);
 		visiteur.visit(this);
 		for (final ComposantSysteme c : listComposantSysteme) {
-			if (c instanceof Repertoire) {
-				visiteur.visit((Repertoire) c);
-			} else {
-				System.out.println("TEST");
-				visiteur.visit((Fichier) c);
-			}
+			visiteur.visit((Repertoire) c);
+			visiteur.visit((Fichier) c);
+			// TODO
 		}
 		visiteur.afterVisit(this);
 	}

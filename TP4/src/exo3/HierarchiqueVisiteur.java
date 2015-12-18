@@ -14,24 +14,12 @@ public class HierarchiqueVisiteur implements Visiteur {
 
 	@Override
 	public void visit(Fichier fichier) {
-		// beforeVisit(fichier);
-		for (int i = 0; i < indentation; i++) {
-			System.out.println("\t");
-		}
-		System.out.println(fichier.getNom());
-		// afterVisit(fichier);
+		System.out.println(indenter() + fichier.getNom());
 	}
 
 	@Override
 	public void visit(Repertoire repertoire) {
-		// beforeVisit(repertoire);
-		for (int i = 0; i < indentation - 1; i++) {
-			System.out.println("\t");
-		}
-		System.out.println("\\-----");
-		System.out.println(repertoire.getNom());
-
-		// afterVisit(repertoire);
+		System.out.println(indenter() + repertoire.getNom());
 	}
 
 	@Override
@@ -44,6 +32,14 @@ public class HierarchiqueVisiteur implements Visiteur {
 	public void afterVisit(ComposantSysteme composant) {
 		System.out.println("MOINS MOINS");
 		indentation--;
+	}
+
+	public String indenter() {
+		String indenter = "";
+		if (this.indentation > 1) {
+			indenter += "\t";
+		}
+		return indenter;
 	}
 
 }
