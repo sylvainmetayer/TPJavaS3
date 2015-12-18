@@ -1,7 +1,7 @@
 /**
  * 
  */
-package exo2;
+package pattern.exo2.observateur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,18 +15,10 @@ public class Capteur implements Runnable, Sujet {
 	private List<Observateur> observateurs;
 	private Donnee donnee;
 
-	/**
-	 * 
-	 */
 	public Capteur() {
 		this.observateurs = new ArrayList<>();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo2.Sujet#ajouterObservateur(exo2.Observateur)
-	 */
 	@Override
 	public void ajouterObservateur(Observateur o) {
 		if (o == null)
@@ -34,11 +26,6 @@ public class Capteur implements Runnable, Sujet {
 		this.observateurs.add(o);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo2.Sujet#retirerObservateur(exo2.Observateur)
-	 */
 	@Override
 	public void retirerObservateur(Observateur o) {
 		if (!observateurs.contains(o))
@@ -47,29 +34,19 @@ public class Capteur implements Runnable, Sujet {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo2.Sujet#notifierObervateur()
-	 */
 	@Override
 	public void notifierObervateur() {
 		for (Observateur o : observateurs) {
 			o.modifier(donnee);
 		}
-
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Runnable#run()
-	 */
 	@Override
 	public void run() {
 		try {
 			while (true) {
-				this.donnee = new Donnee();
+				this.donnee = new Donnee(0, 0, 0);
+				// TODO données à faire en aléatoire
 				notifierObervateur();
 				Thread.sleep(500);
 			}

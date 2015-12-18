@@ -1,7 +1,4 @@
-/**
- * 
- */
-package exo2;
+package pattern.exo2.observateur;
 
 /**
  * @author Sylvain-Damien

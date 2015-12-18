@@ -1,7 +1,7 @@
 /**
  * 
  */
-package exo2;
+package pattern.exo2.observateur;
 
 /**
  * @author Sylvain-Damien
@@ -9,15 +9,9 @@ package exo2;
  */
 public class Meteo implements Observateur {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo2.Observateur#modifier(exo2.Donnee)
-	 */
 	@Override
 	public void modifier(Donnee d) {
 		System.out.println(d.getTemperature());
-
 	}
 
 }

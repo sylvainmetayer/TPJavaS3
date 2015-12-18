@@ -1,7 +1,7 @@
 /**
  * 
  */
-package exo2;
+package pattern.exo2.observateur;
 
 import java.util.ArrayList;
 import java.util.List;
