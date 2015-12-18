@@ -38,14 +38,14 @@ public class Capteur implements Runnable, Sujet {
 	}
 
 	@Override
-	public void ajouterObservateur(Observateur o) {
+	public synchronized void ajouterObservateur(Observateur o) {
 		if (o == null)
 			throw new NullPointerException("L'observateur fourni est nul.");
 		this.observateurs.add(o);
 	}
 
 	@Override
-	public void retirerObservateur(Observateur o) {
+	public synchronized void retirerObservateur(Observateur o) {
 		if (!observateurs.contains(o))
 			throw new IllegalStateException("Le sujet ne comporte pas cet observateur !");
 		this.observateurs.remove(o);
@@ -53,7 +53,7 @@ public class Capteur implements Runnable, Sujet {
 	}
 
 	@Override
-	public void notifierObervateur() {
+	public synchronized void notifierObervateur() {
 		for (Observateur o : observateurs) {
 			o.modifier(donnee);
 		}
@@ -66,8 +66,11 @@ public class Capteur implements Runnable, Sujet {
 	@Override
 	public void run() {
 		try {
+			int numero = 0;
 			Random r = new Random();
 			while (true) {
+				numero++;
+				System.out.println("Passage numero " + numero + "\n");
 				this.donnee = new Donnee(-100 + r.nextDouble() * 200, -100 + r.nextDouble() * 200,
 						-100 + r.nextDouble() * 200);
 

@@ -75,8 +75,13 @@ public class Statistique implements Observateur {
 		}
 		this.temperatures.add(d.getTemperature());
 
-		System.out.println("\n\nTemperature minimale : " + getMinTemperature() + "\nTemperature maximale : "
-				+ getMaxTemperature() + "\nMoyenne temperature : " + getCumulTemperature());
+		StringBuilder sb = new StringBuilder();
+		sb.append("\n\nTemperature donnée : " + d.getTemperature());
+		sb.append("\nTemperature minimale : " + getMinTemperature());
+		sb.append("\nTemperature maximale : " + getMaxTemperature());
+		sb.append("\nMoyenne temperature : " + getCumulTemperature());
+		sb.append("\n----------------------\n");
+		System.out.println(sb.toString());
 	}
 
 }

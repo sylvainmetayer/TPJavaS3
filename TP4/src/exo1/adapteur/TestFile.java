@@ -30,9 +30,8 @@ public class TestFile {
 
 /**
  * Réponses aux questions : <br>
- * Le client est : <br>
- * La Cible est : <br>
- * L'adaptateur est : <br>
- * L'adapté est : <br>
- * TODO
+ * Le client est : TestFile<br>
+ * La Cible est : File<br>
+ * L'adaptateur est : File<br>
+ * L'adapté est : FileImpl<br>
  */
