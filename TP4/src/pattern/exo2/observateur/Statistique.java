@@ -1,65 +1,82 @@
-/**
- * 
- */
 package pattern.exo2.observateur;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
+ * Classe permettant d'établir des statistique sur un {@link Sujet}. Contient
+ * une liste de temperature, qui permet d'établir des statistiques.
+ * 
  * @author Sylvain-Damien
- *
+ * @see Observateur
  */
 public class Statistique implements Observateur {
 
-	private List<Donnee> donnees;
+	private List<Double> temperatures;
 
 	/**
-	 * 
+	 * Constructeur, qui instancie une nouvelle liste de température.
 	 */
 	public Statistique() {
-		this.donnees = new ArrayList<>();
+		this.temperatures = new ArrayList<>();
 	}
 
+	/**
+	 * Retourne la température minimale.
+	 * 
+	 * @return {@link Double}
+	 */
 	public double getMinTemperature() {
-		double min = 0;
-		for (Donnee d : donnees) {
-			if (d.getTemperature() < min) {
-				min = d.getTemperature();
-			}
+		if (temperatures.isEmpty()) {
+			throw new NullPointerException();
 		}
-		return min;
+		return Collections.min(temperatures);
 	}
 
+	/**
+	 * Retourne la température maximale.
+	 * 
+	 * @return {@link Double}
+	 */
 	public double getMaxTemperature() {
-		double max = 0;
-		for (Donnee d : donnees) {
-			if (d.getTemperature() > max) {
-				max = d.getTemperature();
-			}
+		if (temperatures.isEmpty()) {
+			throw new NullPointerException();
 		}
-		return max;
+		return Collections.max(temperatures);
 	}
 
+	/**
+	 * Retourne la moyenne des températures.
+	 * 
+	 * @return {@link Double}
+	 */
 	public double getCumulTemperature() {
 		double somme = 0;
-		for (Donnee d : donnees) {
-			somme += d.getTemperature();
+		for (Double d : temperatures) {
+			somme += d;
 		}
-		return somme;
+		return somme / temperatures.size();
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Affiche la température maximale, minimale, et moyenne de toutes les
+	 * données reçues. Ajoute également la temperature de la données reçues dans
+	 * la listes des temperatures.
 	 * 
-	 * @see exo2.Observateur#modifier(exo2.Donnee)
+	 * @see Observateur#modifier(Donnee) pour plus de détails
+	 * @throws NullPointerException
+	 *             si la donnée est <code>null</code>
 	 */
 	@Override
 	public void modifier(Donnee d) {
 		if (d == null) {
-			throw new NullPointerException();
+			throw new NullPointerException("La donnée est nulle.");
 		}
-		this.donnees.add(d);
+		this.temperatures.add(d.getTemperature());
+
+		System.out.println("\n\nTemperature minimale : " + getMinTemperature() + "\nTemperature maximale : "
+				+ getMaxTemperature() + "\nMoyenne temperature : " + getCumulTemperature());
 	}
 
 }
