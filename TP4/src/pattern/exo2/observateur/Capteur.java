@@ -68,7 +68,8 @@ public class Capteur implements Runnable, Sujet {
 		try {
 			Random r = new Random();
 			while (true) {
-				this.donnee = new Donnee(r.nextDouble() * 100, r.nextDouble() * 100, r.nextDouble() * 100);
+				this.donnee = new Donnee(-100 + r.nextDouble() * 200, -100 + r.nextDouble() * 200,
+						-100 + r.nextDouble() * 200);
 
 				notifierObervateur();
 				Thread.sleep(SLEEP);
