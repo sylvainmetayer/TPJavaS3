@@ -6,21 +6,34 @@ package exo1.adapteur;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author Sylvain-Damien <br>
+ *         Implémentation de {@link File} La javadoc a été précisé lorsque
+ *         nécessaire, se reférer à {@link File} pour plus de détails sur les
+ *         méthodes.
+ * @param <T>
+ *            type générique de la file.
+ * @see File pour la documentation de la file.
+ */
 public class FileImpl<T> implements File<T> {
 
 	private List<T> file;
 
 	/**
-	 * 
+	 * Constructeur, qui instancie une nouvelle liste.
 	 */
 	public FileImpl() {
 		this.file = new ArrayList<>();
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Permet d'ajouter un element à la fin de la liste.<br>
+	 * Levée d'une exception si l'element passé est null.
 	 * 
-	 * @see exo1.adapteur.File#ajouter(java.lang.Object)
+	 * @throws NullPointerException
+	 *             si l'element est nul.
+	 * @see File#ajouter(Object)
 	 */
 	@Override
 	public void ajouter(T t) {
@@ -32,43 +45,42 @@ public class FileImpl<T> implements File<T> {
 
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Permet de consulter l'element en tête de liste..<br>
+	 * Levée d'une exception si la liste est vide.
 	 * 
-	 * @see exo1.adapteur.File#getTete()
+	 * 
+	 * @throws IllegalStateException
+	 *             si la file est vide.
+	 * @see File#getTete()
 	 */
 	@Override
 	public T getTete() {
+		if (file.isEmpty())
+			throw new IllegalStateException("La file est vide !");
 		return this.file.get(0);
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Permet supprimer un element à la liste.<br>
+	 * Levée d'une exception si la file est vide.
 	 * 
-	 * @see exo1.adapteur.File#supprimerQueue()
+	 * @throws IllegalStateException
+	 *             si la file est vide.
+	 * @see File#supprimerTete()
 	 */
 	@Override
 	public void supprimerTete() {
-		if (!estVide()) {
-			this.file.remove(0);
-		}
+		if (estVide())
+			throw new IllegalStateException("La file est vide!");
+		this.file.remove(0);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo1.adapteur.File#longueur()
-	 */
 	@Override
 	public int longueur() {
 		return this.file.size();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see exo1.adapteur.File#estVide()
-	 */
 	@Override
 	public boolean estVide() {
 		return this.file.isEmpty();
