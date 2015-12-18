@@ -42,9 +42,8 @@ public class Repertoire extends ComposantSysteme {
 	 * @see exo3.ComposantSysteme#addComposantSysteme(exo3.ComposantSysteme)
 	 */
 	@Override
-	public void addComposantSysteme(ComposantSysteme composant)
-			throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
+	public void addComposantSysteme(ComposantSysteme composant) throws UnsupportedOperationException {
+		this.listComposantSysteme.add(composant);
 		
 	}
 
@@ -53,6 +52,9 @@ public class Repertoire extends ComposantSysteme {
 	 */
 	@Override
 	public void removeComposantSysteme(int index) throws UnsupportedOperationException {
+		if(listComposantSysteme.get(index) == null){
+			throw new UnsupportedOperationException("Ce composant n'existe pas");
+		}
 		listComposantSysteme.remove(index);
 	}
 
@@ -61,6 +63,9 @@ public class Repertoire extends ComposantSysteme {
 	 */
 	@Override
 	public ComposantSysteme getComposantSysteme(int index) throws UnsupportedOperationException {
+		if(listComposantSysteme.get(index) == null){
+			throw new UnsupportedOperationException("Ce composant n'existe pas");
+		}
 		return listComposantSysteme.get(index);
 	}
 

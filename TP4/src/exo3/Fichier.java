@@ -41,7 +41,7 @@ public class Fichier extends ComposantSysteme{
 	 */
 	@Override
 	public void addComposantSysteme(ComposantSysteme composant) throws UnsupportedOperationException {
-		
+		throw new UnsupportedOperationException("Pas de composant");
 	}
 
 	@Override
@@ -54,15 +54,15 @@ public class Fichier extends ComposantSysteme{
 	 */
 	@Override
 	public void removeComposantSysteme(int index) throws UnsupportedOperationException {
-		
+		throw new UnsupportedOperationException("Pas de composant");
 	}
 
 	/* (non-Javadoc)
 	 * @see exo3.ComposantSysteme#getComposantSysteme(int)
 	 */
 	@Override
-	public void getComposantSysteme(int index) throws UnsupportedOperationException {
-		
+	public ComposantSysteme getComposantSysteme(int index) throws UnsupportedOperationException {
+		throw new UnsupportedOperationException("Pas de composant");
 	}
 
 }
