@@ -7,11 +7,11 @@ package exo3;
  * @author Sylvain-Damien
  *
  */
-public class Fichier extends ComposantSysteme{
+public class Fichier extends ComposantSysteme {
 
 	private String nom;
 	private int taille;
-	
+
 	/**
 	 * 
 	 */
@@ -20,7 +20,9 @@ public class Fichier extends ComposantSysteme{
 		this.taille = taille;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see exo3.ComposantSysteme#getNom()
 	 */
 	@Override
@@ -28,7 +30,9 @@ public class Fichier extends ComposantSysteme{
 		return this.nom;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see exo3.ComposantSysteme#getTaille()
 	 */
 	@Override
@@ -36,7 +40,9 @@ public class Fichier extends ComposantSysteme{
 		return this.taille;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see exo3.ComposantSysteme#addComposantSysteme(exo3.ComposantSysteme)
 	 */
 	@Override
@@ -49,7 +55,9 @@ public class Fichier extends ComposantSysteme{
 		return "Fichier [nom=" + nom + ", taille=" + taille + "]";
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see exo3.ComposantSysteme#removeComposantSysteme(int)
 	 */
 	@Override
@@ -57,12 +65,69 @@ public class Fichier extends ComposantSysteme{
 		throw new UnsupportedOperationException("Pas de composant");
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see exo3.ComposantSysteme#getComposantSysteme(int)
 	 */
 	@Override
 	public ComposantSysteme getComposantSysteme(int index) throws UnsupportedOperationException {
 		throw new UnsupportedOperationException("Pas de composant");
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see exo3.ComposantSysteme#acceptVisiteur(exo3.Visiteur)
+	 */
+	@Override
+	public void acceptVisiteur(Visiteur visiteur) {
+		visiteur.visit(this);
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see exo3.Visiteur#visit(exo3.Fichier)
+	 */
+	@Override
+	public void visit(Fichier fichier) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see exo3.Visiteur#visit(exo3.Repertoire)
+	 */
+	@Override
+	public void visit(Repertoire repertoire) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see exo3.Visiteur#beforeVisit(exo3.ComposantSysteme)
+	 */
+	@Override
+	public void beforeVisit(ComposantSysteme composant) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see exo3.Visiteur#afterVisit(exo3.ComposantSysteme)
+	 */
+	@Override
+	public void afterVisit(ComposantSysteme composant) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
